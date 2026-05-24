@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Command Center Local Automation Utilities
+scripts/setup_cronjobs.py
