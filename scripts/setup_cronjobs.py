@@ -3,6 +3,13 @@ import json
 import sys
 import requests
 
+# Reconfigure stdout to use UTF-8 to prevent UnicodeEncodeErrors on Windows terminals
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 # Set colors for clean terminal output
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
@@ -96,7 +103,7 @@ def setup_cronjobs():
             },
         },
         {
-            "title": "Multi-Site Uptime Trigger",
+            "title": "Uptime Monitor Trigger",
             "url": f"https://api.github.com/repos/{github_repo}/actions/workflows/uptime.yml/dispatches",
             "schedule": {
                 "timezone": "UTC",
@@ -152,10 +159,12 @@ def setup_cronjobs():
                 "url": job_spec["url"],
                 "enabled": True,
                 "saveResponses": True,
-                "requestMethod": 1,  # 1 represents POST
-                "requestHeaders": headers,
-                "requestBody": body,
                 "schedule": job_spec["schedule"],
+                "extendedData": {
+                    "requestMethod": 1,  # 1 represents POST
+                    "headers": headers,
+                    "body": body,
+                }
             }
         }
 
