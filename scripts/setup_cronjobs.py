@@ -172,8 +172,8 @@ def setup_cronjobs():
                 "enabled": True,
                 "saveResponses": True,
                 "schedule": job_spec["schedule"],
+                "requestMethod": 1,  # 1 represents POST
                 "extendedData": {
-                    "requestMethod": 1,  # 1 represents POST
                     "headers": headers,
                     "body": body,
                 }
