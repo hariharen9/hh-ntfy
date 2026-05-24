@@ -107,21 +107,48 @@ def setup_cronjobs():
                 "wdays": [-1],
             },
         },
+        {
+            "title": "Package Downloads Monitor Trigger",
+            "url": f"https://api.github.com/repos/{github_repo}/actions/workflows/package.yml/dispatches",
+            "schedule": {
+                "timezone": "UTC",
+                "minutes": [30],
+                "hours": [2],
+                "mdays": [-1],
+                "months": [-1],
+                "wdays": [-1],
+            },
+        },
     ]
 
-    # Step 3: Trigger API calls
+    # Step 3: Fetch existing jobs to prevent duplicates
+    print_step("Fetching existing jobs from cron-job.org...")
     cjo_url = "https://api.cron-job.org/jobs"
     cjo_headers = {
         "Authorization": f"Bearer {cjo_api_key}",
         "Content-Type": "application/json",
     }
 
+    existing_jobs = {}
+    try:
+        get_res = requests.get(cjo_url, headers=cjo_headers, timeout=15)
+        if get_res.status_code == 200:
+            for job in get_res.json().get("jobs", []):
+                existing_jobs[job.get("title")] = job.get("jobId")
+            print_success(f"Successfully retrieved {len(existing_jobs)} existing jobs.")
+        else:
+            print_error(f"Failed to fetch existing jobs. Status {get_res.status_code}")
+    except Exception as e:
+        print_error(f"Network error checking existing jobs: {e}")
+
+    # Step 4: Trigger API calls (idempotent PUT/PATCH)
     for job_spec in jobs:
-        print_step(f"Registering '{job_spec['title']}'...")
+        title = job_spec["title"]
+        job_id = existing_jobs.get(title)
 
         payload = {
             "job": {
-                "title": job_spec["title"],
+                "title": title,
                 "url": job_spec["url"],
                 "enabled": True,
                 "saveResponses": True,
@@ -132,18 +159,31 @@ def setup_cronjobs():
             }
         }
 
-        try:
-            response = requests.put(cjo_url, json=payload, headers=cjo_headers, timeout=15)
-            result = response.json()
-
-            if response.status_code in [200, 201]:
-                job_id = result.get("jobId")
-                print_success(f"Successfully created! Job ID: {job_id}")
-            else:
-                print_error(f"Failed to create job. Status {response.status_code}")
-                print(json.dumps(result, indent=2))
-        except Exception as e:
-            print_error(f"Network error: {e}")
+        if job_id:
+            print_step(f"Updating existing job '{title}' (Job ID: {job_id})...")
+            url = f"{cjo_url}/{job_id}"
+            try:
+                response = requests.patch(url, json=payload, headers=cjo_headers, timeout=15)
+                if response.status_code == 200:
+                    print_success(f"Successfully updated '{title}'!")
+                else:
+                    print_error(f"Failed to update '{title}'. Status {response.status_code}")
+                    print(json.dumps(response.json(), indent=2))
+            except Exception as e:
+                print_error(f"Network error: {e}")
+        else:
+            print_step(f"Registering new job '{title}'...")
+            try:
+                response = requests.put(cjo_url, json=payload, headers=cjo_headers, timeout=15)
+                result = response.json()
+                if response.status_code in [200, 201]:
+                    new_job_id = result.get("jobId")
+                    print_success(f"Successfully created! Job ID: {new_job_id}")
+                else:
+                    print_error(f"Failed to create job. Status {response.status_code}")
+                    print(json.dumps(result, indent=2))
+            except Exception as e:
+                print_error(f"Network error: {e}")
 
     print("\n" + "=" * 60)
     print("🎉 Automated API Setup Complete!")

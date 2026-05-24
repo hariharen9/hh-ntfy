@@ -1,0 +1,60 @@
+name: Package Download Stats Monitor
+
+on:
+  schedule:
+    # Run daily at 02:30 UTC (08:00 IST)
+    - cron: "30 2 * * *"
+  # Allow manual triggering via GitHub Actions UI
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    name: Track Package Downloads & Push Daily Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Cache Pip Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Package Download Stats Monitor
+        env:
+          NTFY_PACKAGE_SECRET_LINK: ${{ secrets.NTFY_PACKAGE_SECRET_LINK }}
+          NTFY_UPTIME_SECRET_LINK: ${{ secrets.NTFY_UPTIME_SECRET_LINK }}
+        run: |
+          python scripts/package_monitor.py
+
+      - name: Commit State Cache Changes
+        run: |
+          # Check if there are changes in the status cache file
+          if git status --porcelain data/package_status.json | grep -q 'M\|??'; then
+            echo "Package download status cache changed. Committing updates back to repo..."
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/package_status.json
+            git commit -m "chore: update package download stats cache [skip ci]"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No package statistics changes detected. Skipping git commit."
+          fi
