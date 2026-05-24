@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+from email.header import Header
 
 # Reconfigure stdout to use UTF-8 to prevent UnicodeEncodeErrors on Windows terminals
 if hasattr(sys.stdout, 'reconfigure'):
@@ -148,7 +149,7 @@ def send_weather_report():
     # Construct ntfy alert headers
     title = f"🌦️ Weather Report - {city}"
     headers = {
-        "Title": title,
+        "Title": Header(title, 'utf-8').encode(),
         "Priority": "default",
         "Tags": f"calendar,globe_with_meridians,{tag_icon}",
         "X-Markdown": "yes",
@@ -164,5 +165,24 @@ def send_weather_report():
         print(f"[Network Error] Failed to connect to ntfy: {e}")
 
 
+def load_local_env():
+    """Loads environment variables from local.env located in the repository root."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    env_path = os.path.abspath(os.path.join(script_dir, "..", "local.env"))
+    
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        key, val = line.split("=", 1)
+                        os.environ[key.strip()] = val.strip().strip('"').strip("'")
+            print("[Env] Loaded local settings from local.env")
+        except Exception as e:
+            print(f"[Warning] Failed to read 'local.env': {e}")
+
+
 if __name__ == "__main__":
+    load_local_env()
     send_weather_report()

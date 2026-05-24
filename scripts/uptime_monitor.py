@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import requests
+from email.header import Header
 
 # Target websites to monitor
 WEBSITES = [
@@ -61,16 +62,18 @@ def save_current_status(status_map):
 def send_ntfy_alert(ntfy_url, site_name, site_url, state, details=None):
     """Sends transition-state alerts (outage or recovery) to your phone."""
     if state == "DOWN":
+        title = f"🚨 OUTAGE DETECTED: {site_name}"
         headers = {
-            "Title": f"🚨 OUTAGE DETECTED: {site_name}",
+            "Title": Header(title, 'utf-8').encode(),
             "Priority": "max",  # Rings/vibrates aggressively
             "Tags": "rotating_light,skull,x",
             "Click": site_url,
         }
         body_text = f"Website is unreachable!\nURL: {site_url}\nError/Details: {details}"
     else:
+        title = f"✅ RECOVERED: {site_name}"
         headers = {
-            "Title": f"✅ RECOVERED: {site_name}",
+            "Title": Header(title, 'utf-8').encode(),
             "Priority": "default",  # Standard notification
             "Tags": "white_check_mark,tada,partying_face",
             "Click": site_url,
