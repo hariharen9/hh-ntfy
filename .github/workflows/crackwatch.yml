@@ -47,11 +47,12 @@ jobs:
         run: |
           # Check if there are changes in the state file
           if git status --porcelain data/crackwatch_seen.txt | grep -q 'M'; then
-            print "State cache changed. Committing updates back to repo..."
+            echo "State cache changed. Committing updates back to repo..."
             git config --global user.name "github-actions[bot]"
             git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/crackwatch_seen.txt
             git commit -m "chore: update crackwatch seen posts cache [skip ci]"
+            git pull --rebase origin main
             git push
           else
             echo "No state cache changes detected. Skipping git commit."

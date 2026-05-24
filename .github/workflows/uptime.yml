@@ -52,6 +52,7 @@ jobs:
             git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/uptime_status.json
             git commit -m "chore: update uptime status cache [skip ci]"
+            git pull --rebase origin main
             git push
           else
             echo "No uptime status changes detected. Skipping git commit."
