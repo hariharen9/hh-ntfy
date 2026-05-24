@@ -1,0 +1,58 @@
+name: Multi-Site Uptime Monitor
+
+on:
+  schedule:
+    # Run every 15 minutes
+    - cron: "*/15 * * * *"
+  # Allow manual triggering via GitHub Actions UI
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ping:
+    name: Ping Services & Alert
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Cache Pip Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Uptime Monitor
+        env:
+          NTFY_UPTIME_SECRET_LINK: ${{ secrets.NTFY_UPTIME_SECRET_LINK }}
+        run: |
+          python scripts/uptime_monitor.py
+
+      - name: Commit State Cache Changes
+        run: |
+          # Check if there are changes in the status cache file
+          if git status --porcelain data/uptime_status.json | grep -q 'M\|??'; then
+            echo "Uptime status changed. Committing updates back to repo..."
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/uptime_status.json
+            git commit -m "chore: update uptime status cache [skip ci]"
+            git push
+          else
+            echo "No uptime status changes detected. Skipping git commit."
+          fi
