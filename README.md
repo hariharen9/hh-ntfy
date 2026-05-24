@@ -10,6 +10,8 @@ A serverless, 100% cost-free background tracking network running entirely on **G
 | :---: | :--- | :--- | :--- | :--- |
 | <a href="https://github.com/hariharen9/hh-ntfy/actions/workflows/crackwatch.yml"><img src="https://github.com/hariharen9/hh-ntfy/actions/workflows/crackwatch.yml/badge.svg" height="28" alt="CrackWatch Status"></a> | **r/CrackWatch Denuvo Tracker** | `/r/CrackWatch` RSS | Every 5 Mins | Flair: `"Denuvo release"` |
 | <a href="https://github.com/hariharen9/hh-ntfy/actions/workflows/uptime.yml"><img src="https://github.com/hariharen9/hh-ntfy/actions/workflows/uptime.yml/badge.svg" height="28" alt="Uptime Status"></a> | **Multi-Site Uptime Monitor** | 4 Target Websites | Every 15 Mins | State Transition (`UP` ➔ `DOWN` or `DOWN` ➔ `UP`) |
+| <a href="https://github.com/hariharen9/hh-ntfy/actions/workflows/package.yml"><img src="https://github.com/hariharen9/hh-ntfy/actions/workflows/package.yml/badge.svg" height="28" alt="Package Status"></a> | **Package Downloads Monitor** | npm, PyPI, VS Code APIs | Daily (02:30 UTC) | Generates download stats digest |
+| <a href="https://github.com/hariharen9/hh-ntfy/actions/workflows/weather.yml"><img src="https://github.com/hariharen9/hh-ntfy/actions/workflows/weather.yml/badge.svg" height="28" alt="Weather Status"></a> | **Daily Weather Monitor** | Open-Meteo API | Daily (07:00 IST / 01:30 UTC) | Pushes morning weather conditions |
 
 ---
 

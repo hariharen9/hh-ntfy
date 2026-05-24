@@ -126,6 +126,18 @@ def setup_cronjobs():
                 "wdays": [-1],
             },
         },
+        {
+            "title": "Daily Weather Trigger",
+            "url": f"https://api.github.com/repos/{github_repo}/actions/workflows/weather.yml/dispatches",
+            "schedule": {
+                "timezone": "UTC",
+                "minutes": [30],
+                "hours": [1],
+                "mdays": [-1],
+                "months": [-1],
+                "wdays": [-1],
+            },
+        },
     ]
 
     # Step 3: Fetch existing jobs to prevent duplicates
