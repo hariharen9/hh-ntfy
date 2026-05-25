@@ -1,8 +1,8 @@
 {
   "npm:kessler-cli": {
     "daily": 0,
-    "weekly": 8,
-    "monthly": 21,
+    "weekly": 5,
+    "monthly": 20,
     "yearly": 304,
     "total": null,
     "version": "0.2.1"
@@ -17,12 +17,12 @@
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
-    "daily": 1,
+    "daily": 0,
     "weekly": null,
     "monthly": null,
     "yearly": null,
     "total": 549,
-    "total_downloads": 594,
+    "total_downloads": 593,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
