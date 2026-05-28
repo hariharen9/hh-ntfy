@@ -6,7 +6,7 @@ import feedparser
 
 # Target RSS feed for r/CrackWatch
 RSS_URL = "https://www.reddit.com/r/CrackWatch/new/.rss"
-TARGET_FLAIR = "Denuvo release"
+TARGET_FLAIRS = ["Denuvo release", "Release", "Denuvo Hypervisor Workaround"]
 
 # Resolve directories dynamically relative to the script location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -92,7 +92,7 @@ def run_tracker():
     # Masking part of the secret for security logs
     masked_url = ntfy_url[:20] + "..." + ntfy_url[-8:] if len(ntfy_url) > 28 else "..."
     print(f"[Config] Target Push Endpoint: {masked_url}")
-    print(f"[Config] Filtering strictly for flair: '{TARGET_FLAIR}'")
+    print(f"[Config] Filtering strictly for flairs: {TARGET_FLAIRS}")
 
     # Load cache
     seen_posts = load_seen_posts()
@@ -127,17 +127,20 @@ def run_tracker():
         if entry_link in seen_posts:
             continue
 
-        # Check if the post has the target flair
+        # Check if the post has any of the target flairs
         is_match = False
-        matched_flair = TARGET_FLAIR
+        matched_flair = ""
 
         # Reddit RSS includes categories/flairs in entry.tags list
         if hasattr(entry, "tags"):
             for tag in entry.tags:
-                tag_term = tag.get("term", "")
-                if TARGET_FLAIR.lower() in tag_term.lower():
-                    is_match = True
-                    matched_flair = tag_term
+                tag_term = tag.get("term", "").strip()
+                for target in TARGET_FLAIRS:
+                    if target.lower() == tag_term.lower():
+                        is_match = True
+                        matched_flair = tag_term
+                        break
+                if is_match:
                     break
 
         if is_match:
