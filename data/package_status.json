@@ -3,7 +3,7 @@
     "daily": 0,
     "weekly": 5,
     "monthly": 28,
-    "yearly": 319,
+    "yearly": 323,
     "total": null,
     "version": "0.2.1"
   },
@@ -17,7 +17,7 @@
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
-    "daily": 1,
+    "daily": 0,
     "weekly": null,
     "monthly": null,
     "yearly": null,
@@ -26,17 +26,17 @@
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 0,
-    "weekly": 0,
-    "monthly": 0,
+    "daily": 1,
+    "weekly": 46,
+    "monthly": 105,
     "yearly": null,
     "total": 7000,
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 5,
-    "weekly": 48,
-    "monthly": 119,
+    "daily": 0,
+    "weekly": 0,
+    "monthly": 0,
     "yearly": null,
     "total": 13000,
     "version": "0.4.0"
