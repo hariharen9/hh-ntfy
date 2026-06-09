@@ -17,11 +17,11 @@
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
-    "daily": 0,
+    "daily": 1,
     "weekly": null,
     "monthly": null,
     "yearly": null,
-    "total": 553,
+    "total": 554,
     "total_downloads": 614,
     "version": "1.1.2"
   },
@@ -34,9 +34,9 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 9,
-    "weekly": 57,
-    "monthly": 126,
+    "daily": 0,
+    "weekly": 0,
+    "monthly": 0,
     "yearly": null,
     "total": 13000,
     "version": "0.4.0"
