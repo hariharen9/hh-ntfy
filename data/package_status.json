@@ -21,14 +21,14 @@
     "weekly": null,
     "monthly": null,
     "yearly": null,
-    "total": 556,
-    "total_downloads": 622,
+    "total": 557,
+    "total_downloads": 623,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
     "daily": 0,
-    "weekly": 0,
-    "monthly": 0,
+    "weekly": 23,
+    "monthly": 101,
     "yearly": null,
     "total": 8000,
     "version": "5.2.1"
