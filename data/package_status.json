@@ -17,12 +17,12 @@
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
-    "daily": 1,
+    "daily": 0,
     "weekly": null,
     "monthly": null,
     "yearly": null,
     "total": 559,
-    "total_downloads": 626,
+    "total_downloads": 627,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
@@ -44,7 +44,7 @@
   "npm:lamacli": {
     "daily": 0,
     "weekly": 14,
-    "monthly": 30,
+    "monthly": 29,
     "yearly": 605,
     "total": null,
     "version": "1.5.2"
