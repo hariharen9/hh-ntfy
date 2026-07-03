@@ -3,7 +3,7 @@
     "daily": 2,
     "weekly": 4,
     "monthly": 32,
-    "yearly": 344,
+    "yearly": 345,
     "total": null,
     "version": "0.2.1"
   },
@@ -13,7 +13,7 @@
     "monthly": null,
     "yearly": null,
     "total": 7,
-    "total_downloads": 214,
+    "total_downloads": 215,
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
@@ -22,21 +22,21 @@
     "monthly": null,
     "yearly": null,
     "total": 562,
-    "total_downloads": 637,
+    "total_downloads": 638,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 0,
-    "weekly": 11,
+    "daily": 2,
+    "weekly": 13,
     "monthly": 106,
     "yearly": null,
     "total": 8000,
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 1,
-    "weekly": 12,
-    "monthly": 105,
+    "daily": 0,
+    "weekly": 10,
+    "monthly": 103,
     "yearly": null,
     "total": 13000,
     "version": "0.4.0"
@@ -45,7 +45,7 @@
     "daily": 0,
     "weekly": 10,
     "monthly": 37,
-    "yearly": 619,
+    "yearly": 636,
     "total": null,
     "version": "1.5.2"
   }
