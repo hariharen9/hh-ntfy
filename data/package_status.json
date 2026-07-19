@@ -13,7 +13,7 @@
     "monthly": null,
     "yearly": null,
     "total": 7,
-    "total_downloads": 230,
+    "total_downloads": 232,
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
@@ -26,9 +26,9 @@
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 14,
-    "weekly": 40,
-    "monthly": 77,
+    "daily": 0,
+    "weekly": 38,
+    "monthly": 75,
     "yearly": null,
     "total": 8000,
     "version": "5.2.1"
@@ -43,9 +43,9 @@
   },
   "npm:lamacli": {
     "daily": 0,
-    "weekly": 7,
-    "monthly": 81,
-    "yearly": 616,
+    "weekly": 2,
+    "monthly": 80,
+    "yearly": 610,
     "total": null,
     "version": "1.5.2"
   }
