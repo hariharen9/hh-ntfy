@@ -22,7 +22,7 @@
     "monthly": null,
     "yearly": null,
     "total": 568,
-    "total_downloads": 652,
+    "total_downloads": 654,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
@@ -34,16 +34,16 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 0,
-    "weekly": 0,
-    "monthly": 0,
+    "daily": 3,
+    "weekly": 10,
+    "monthly": 107,
     "yearly": null,
     "total": 14000,
     "version": "0.4.0"
   },
   "npm:lamacli": {
     "daily": 0,
-    "weekly": 2,
+    "weekly": 1,
     "monthly": 80,
     "yearly": 610,
     "total": null,
