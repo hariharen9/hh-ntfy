@@ -2,7 +2,7 @@
   "npm:kessler-cli": {
     "daily": 0,
     "weekly": 1,
-    "monthly": 27,
+    "monthly": 18,
     "yearly": 374,
     "total": null,
     "version": "0.2.1"
