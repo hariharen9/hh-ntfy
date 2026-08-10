@@ -2,7 +2,7 @@
   "npm:kessler-cli": {
     "daily": 0,
     "weekly": 1,
-    "monthly": 15,
+    "monthly": 8,
     "yearly": 375,
     "total": null,
     "version": "0.2.1"
@@ -13,16 +13,16 @@
     "monthly": null,
     "yearly": null,
     "total": 7,
-    "total_downloads": 262,
+    "total_downloads": 263,
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
-    "daily": 0,
+    "daily": 1,
     "weekly": null,
     "monthly": null,
     "yearly": null,
-    "total": 569,
-    "total_downloads": 686,
+    "total": 570,
+    "total_downloads": 688,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
@@ -34,17 +34,17 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 0,
-    "weekly": 0,
-    "monthly": 0,
+    "daily": 8,
+    "weekly": 9,
+    "monthly": 41,
     "yearly": null,
     "total": 14000,
     "version": "0.4.0"
   },
   "npm:lamacli": {
     "daily": 0,
-    "weekly": 1,
-    "monthly": 18,
+    "weekly": 0,
+    "monthly": 15,
     "yearly": 458,
     "total": null,
     "version": "1.5.2"
