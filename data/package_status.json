@@ -2,7 +2,7 @@
   "npm:kessler-cli": {
     "daily": 0,
     "weekly": 6,
-    "monthly": 22,
+    "monthly": 21,
     "yearly": 395,
     "total": null,
     "version": "0.2.1"
@@ -13,7 +13,7 @@
     "monthly": null,
     "yearly": null,
     "total": 8,
-    "total_downloads": 279,
+    "total_downloads": 283,
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
