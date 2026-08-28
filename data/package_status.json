@@ -1,7 +1,7 @@
 {
   "npm:kessler-cli": {
     "daily": 0,
-    "weekly": 6,
+    "weekly": 5,
     "monthly": 21,
     "yearly": 395,
     "total": null,
