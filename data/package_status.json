@@ -3,7 +3,7 @@
     "daily": 1,
     "weekly": 3,
     "monthly": 23,
-    "yearly": 397,
+    "yearly": 401,
     "total": null,
     "version": "0.2.1"
   },
@@ -13,7 +13,7 @@
     "monthly": null,
     "yearly": null,
     "total": 8,
-    "total_downloads": 287,
+    "total_downloads": 288,
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
@@ -35,8 +35,8 @@
   },
   "pypi:enhance-this": {
     "daily": 0,
-    "weekly": 5,
-    "monthly": 21,
+    "weekly": 0,
+    "monthly": 0,
     "yearly": null,
     "total": 15000,
     "version": "0.4.0"
