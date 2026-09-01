@@ -5,7 +5,7 @@
     "monthly": 23,
     "yearly": 401,
     "total": null,
-    "version": "0.2.1"
+    "version": "0.2.3"
   },
   "vscode:hariharen.kessler-vscode": {
     "daily": 0,
@@ -22,7 +22,7 @@
     "monthly": null,
     "yearly": null,
     "total": 574,
-    "total_downloads": 700,
+    "total_downloads": 709,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
@@ -45,7 +45,7 @@
     "daily": 1,
     "weekly": 5,
     "monthly": 7,
-    "yearly": 310,
+    "yearly": 309,
     "total": null,
     "version": "1.5.2"
   }
