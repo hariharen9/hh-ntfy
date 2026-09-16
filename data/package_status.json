@@ -27,8 +27,8 @@
   },
   "pypi:peg-this": {
     "daily": 0,
-    "weekly": 0,
-    "monthly": 0,
+    "weekly": 2,
+    "monthly": 27,
     "yearly": null,
     "total": 9000,
     "version": "5.2.1"
