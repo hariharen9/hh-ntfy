@@ -34,12 +34,12 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 0,
-    "weekly": 0,
-    "monthly": 13,
+    "daily": 352,
+    "weekly": 352,
+    "monthly": 364,
     "yearly": null,
     "total": 15000,
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "npm:lamacli": {
     "daily": 0,
