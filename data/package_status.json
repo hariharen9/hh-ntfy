@@ -34,11 +34,11 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 352,
-    "weekly": 352,
-    "monthly": 364,
+    "daily": 0,
+    "weekly": 0,
+    "monthly": 0,
     "yearly": null,
-    "total": 15000,
+    "total": 16000,
     "version": "0.5.0"
   },
   "npm:lamacli": {
