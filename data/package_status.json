@@ -3,7 +3,7 @@
     "daily": 1,
     "weekly": 11,
     "monthly": 243,
-    "yearly": 639,
+    "yearly": 642,
     "total": null,
     "version": "0.2.3"
   },
@@ -34,9 +34,9 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 2,
-    "weekly": 40,
-    "monthly": 396,
+    "daily": 0,
+    "weekly": 0,
+    "monthly": 0,
     "yearly": null,
     "total": 16000,
     "version": "0.5.0"
@@ -45,7 +45,7 @@
     "daily": 0,
     "weekly": 3,
     "monthly": 29,
-    "yearly": 326,
+    "yearly": 343,
     "total": null,
     "version": "1.5.2"
   }
