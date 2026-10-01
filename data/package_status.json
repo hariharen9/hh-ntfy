@@ -35,8 +35,8 @@
   },
   "pypi:enhance-this": {
     "daily": 0,
-    "weekly": 18,
-    "monthly": 396,
+    "weekly": 0,
+    "monthly": 0,
     "yearly": null,
     "total": 16000,
     "version": "0.5.0"
