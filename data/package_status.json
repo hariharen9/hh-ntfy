@@ -1,9 +1,9 @@
 {
   "npm:kessler-cli": {
-    "daily": 0,
-    "weekly": 7,
-    "monthly": 244,
-    "yearly": 648,
+    "daily": 2,
+    "weekly": 6,
+    "monthly": 61,
+    "yearly": 650,
     "total": null,
     "version": "0.2.3"
   },
@@ -26,8 +26,8 @@
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 0,
-    "weekly": 4,
+    "daily": 2,
+    "weekly": 6,
     "monthly": 20,
     "yearly": null,
     "total": 9000,
@@ -35,17 +35,17 @@
   },
   "pypi:enhance-this": {
     "daily": 0,
-    "weekly": 0,
-    "monthly": 0,
+    "weekly": 18,
+    "monthly": 396,
     "yearly": null,
     "total": 16000,
     "version": "0.5.0"
   },
   "npm:lamacli": {
-    "daily": 1,
+    "daily": 0,
     "weekly": 1,
-    "monthly": 32,
-    "yearly": 346,
+    "monthly": 27,
+    "yearly": 352,
     "total": null,
     "version": "1.5.2"
   }
