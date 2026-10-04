@@ -26,17 +26,17 @@
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 1,
-    "weekly": 7,
-    "monthly": 20,
+    "daily": 14,
+    "weekly": 20,
+    "monthly": 29,
     "yearly": null,
     "total": 9000,
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 2,
-    "weekly": 18,
-    "monthly": 396,
+    "daily": 75,
+    "weekly": 85,
+    "monthly": 483,
     "yearly": null,
     "total": 16000,
     "version": "0.5.0"
