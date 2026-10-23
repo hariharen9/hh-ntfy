@@ -26,7 +26,7 @@
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 0,
+    "daily": 1,
     "weekly": 1,
     "monthly": 27,
     "yearly": null,
@@ -45,7 +45,7 @@
     "daily": 2,
     "weekly": 3,
     "monthly": 17,
-    "yearly": 332,
+    "yearly": 331,
     "total": null,
     "version": "1.5.2"
   }
