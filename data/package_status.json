@@ -22,11 +22,11 @@
     "monthly": null,
     "yearly": null,
     "total": 590,
-    "total_downloads": 736,
+    "total_downloads": 738,
     "version": "1.1.2"
   },
   "pypi:peg-this": {
-    "daily": 1,
+    "daily": 0,
     "weekly": 3,
     "monthly": 27,
     "yearly": null,
@@ -35,7 +35,7 @@
   },
   "pypi:enhance-this": {
     "daily": 1,
-    "weekly": 24,
+    "weekly": 17,
     "monthly": 494,
     "yearly": null,
     "total": 17000,
@@ -45,7 +45,7 @@
     "daily": 3,
     "weekly": 5,
     "monthly": 17,
-    "yearly": 334,
+    "yearly": 333,
     "total": null,
     "version": "1.5.2"
   }
