@@ -34,7 +34,7 @@
     "version": "5.2.1"
   },
   "pypi:enhance-this": {
-    "daily": 1,
+    "daily": 2,
     "weekly": 7,
     "monthly": 494,
     "yearly": null,
