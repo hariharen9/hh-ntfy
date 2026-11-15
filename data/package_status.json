@@ -1,6 +1,6 @@
 {
   "npm:kessler-cli": {
-    "daily": 3,
+    "daily": 0,
     "weekly": 10,
     "monthly": 44,
     "yearly": 728,
@@ -17,7 +17,7 @@
     "version": "1.1.0"
   },
   "vscode:Hariharen.localseek": {
-    "daily": 1,
+    "daily": 0,
     "weekly": null,
     "monthly": null,
     "yearly": null,
@@ -42,10 +42,10 @@
     "version": "0.5.0"
   },
   "npm:lamacli": {
-    "daily": 3,
-    "weekly": 35,
-    "monthly": 62,
-    "yearly": 392,
+    "daily": 2,
+    "weekly": 34,
+    "monthly": 64,
+    "yearly": 394,
     "total": null,
     "version": "1.5.2"
   }
