@@ -1,6 +1,6 @@
 {
   "npm:kessler-cli": {
-    "daily": 6,
+    "daily": 0,
     "weekly": 11,
     "monthly": 50,
     "yearly": 749,
@@ -44,7 +44,7 @@
   "npm:lamacli": {
     "daily": 0,
     "weekly": 19,
-    "monthly": 78,
+    "monthly": 77,
     "yearly": 411,
     "total": null,
     "version": "1.5.2"
