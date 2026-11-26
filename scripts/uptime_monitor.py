@@ -6,7 +6,7 @@ from email.header import Header
 
 # Target websites to monitor
 WEBSITES = [
-    {"name": "HariHaren Site", "url": "https://hariharen.site"},
+    {"name": "HariHaren Site", "url": "https://hariharen.space"},
     {"name": "Scync Space", "url": "https://scync.space"},
     {"name": "JobTrac Site", "url": "https://jobtrac.site"},
     {"name": "Google", "url": "https://www.google.com"},

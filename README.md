@@ -94,7 +94,7 @@ To add, remove, or modify the websites being monitored, open the file [scripts/u
 
 ```python
 WEBSITES = [
-    {"name": "HariHaren Site", "url": "https://hariharen.site"},
+    {"name": "HariHaren Site", "url": "https://hariharen.space"},
     {"name": "Scync Space", "url": "https://scync.space"},
     {"name": "JobTrac Site", "url": "https://jobtrac.site"},
     {"name": "Google", "url": "https://www.google.com"},
